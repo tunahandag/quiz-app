@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of France?",
+    "answers": ["Paris", "London", "Berlin", "Madrid"],
+    "correct": 0
+  },
+  {
+    "id": 2,
+    "question": "What is 2 + 2?",
+    "answers": ["3", "4", "5", "6"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "question": "Which planet is known as the Red Planet?",
+    "answers": ["Earth", "Mars", "Jupiter", "Venus"],
+    "correct": 1
+  },
+  {
+    "id": 4,
+    "question": "What is the largest ocean on Earth?",
+    "answers": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    "correct": 3
+  },
+  {
+    "id": 5,
+    "question": "What is the chemical symbol for gold?",
+    "answers": ["Au", "Ag", "Pb", "Fe"],
+    "correct": 0
+  }
+]
