@@ -14,7 +14,8 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 		return
 	}
     fmt.Println("Questions are requested!")
-    json.NewEncoder(w).Encode(questions)
+
+    json.NewEncoder(w).Encode(questionsResponse)
 }
 
 // Answer represents a single answer to a question

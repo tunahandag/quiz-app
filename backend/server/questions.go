@@ -15,8 +15,15 @@ type Question struct {
     Correct  int      `json:"correct"`
 }
 
+type QuestionResponse struct {
+    ID       int      `json:"id"`
+    Question string   `json:"question"`
+    Answers  []string `json:"answers"`
+}
+
 // questions stores all questions
 var questions []Question
+var questionsResponse []QuestionResponse
 
 // LoadQuestions reads questions from a file and stores them in the questions variable
 // It logs a fatal error if the file cannot be read or the questions cannot be unmarshaled
@@ -28,5 +35,9 @@ func LoadQuestions(filename string) {
     err = json.Unmarshal(data, &questions)
     if err != nil {
         log.Fatalf("Failed to unmarshal questions: %v", err)
+    }
+    questionsResponse = make([]QuestionResponse, len(questions))
+    for i, question := range questions {
+        questionsResponse[i] = QuestionResponse{ID: question.ID, Question: question.Question, Answers: question.Answers}
     }
 }
