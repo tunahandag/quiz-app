@@ -9,6 +9,10 @@ import (
 
 // GetQuestions returns the list of questions as JSON
 func GetQuestions(w http.ResponseWriter, r *http.Request) {
+    if(r.Method != http.MethodGet) {
+		http.Error(w, "Only GET is allowed", http.StatusMethodNotAllowed)
+		return
+	}
     fmt.Println("Questions are requested!")
     json.NewEncoder(w).Encode(questions)
 }
@@ -30,6 +34,11 @@ var submissions = [][]Answer{}
 
 // SubmitAnswers receives quiz answers and calculates the result
 func SubmitAnswers(w http.ResponseWriter, r *http.Request) {
+    if(r.Method != http.MethodPost) {
+		http.Error(w, "Only POST is allowed", http.StatusMethodNotAllowed)
+		return
+	}
+    
     var answers []Answer
     json.NewDecoder(r.Body).Decode(&answers)
 
